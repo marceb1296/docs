@@ -1,0 +1,55 @@
+.nav-doc-container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    width: 100%;
+    max-height: 70px;
+    background-color: #FFE599;
+    z-index: 1;
+    position: fixed;
+    font-weight: bold;
+    transition: top .3s ease-in; 
+    
+    & > span {
+        padding: 1em;
+        text-shadow: 2px 0 white, -2px 0 white, 0 2px white, 0 -2px white,
+                        1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
+    }
+
+    & .menu {
+        width: 20px;
+        height: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        padding: 1em;
+
+        &.active {
+            
+            & span:nth-child(1) {
+                transform: rotate(45deg) translateY(9px);
+            }
+            
+            & span:nth-child(2) {
+                opacity: 0;
+            }
+
+            & span:nth-child(3) {
+                transform: rotate(-45deg) translateY(-9px);
+            }
+        }
+
+        &:active {
+            box-shadow: 2px 2px 5px gray;
+        }
+        
+        & span {
+            transition: opacity .5s ease, transform .5s ease;
+            width: 100%;
+            height: 15%;
+            background-color: black;
+        }
+    }
+}
+

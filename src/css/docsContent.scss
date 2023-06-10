@@ -1,0 +1,79 @@
+.docs-section {
+    min-width: 10em;
+    overflow-y: auto;
+
+    & > :not(h2):not(h3) {
+        margin-left: 1em;
+    }
+
+    & pre {
+        padding: 1em;
+        color: white;
+        background-color: #18120e;
+        border-radius: 5px;
+        overflow-y: auto;
+    }
+
+    & strong {
+        font-size: 1.3em;
+    }
+
+    & .table {
+
+        font-size: .8em;
+        overflow-y: auto;
+        
+        & table {
+            
+            border-collapse: separate;
+            border-spacing: 0;
+
+            & th {
+                background-color: #333333;
+                color: white;
+            }
+
+            & td, th {
+                padding: 1em;
+                border: 1px black;
+                border-style: none solid solid none;
+                text-align: center;
+
+                & ul {
+                    padding: 0;
+                    list-style: none;
+                }
+            }
+    
+            & tr:nth-child(even) td {
+                background-color: #f6f6f6;
+            }
+            
+            & tr:nth-child(odd) td {
+                background-color: #ffffff;
+            }
+    
+            & tr:first-child th:first-child { 
+                border-top-left-radius: 5px; 
+            }
+            & tr:first-child th:last-child { 
+                border-top-right-radius: 5px; 
+            }
+    
+            & tr:last-child td:first-child { 
+                border-bottom-left-radius: 5px; 
+            }
+            & tr:last-child td:last-child { 
+                border-bottom-right-radius: 5px; 
+            }
+    
+            & tr:first-child th { 
+                border-top-style: solid; 
+            }
+            & tr td:first-child, & tr th:first-child { 
+                border-left-style: solid; 
+            }
+        }
+
+    }
+}
