@@ -5,9 +5,10 @@ import { DocsHeaderContext } from "../context";
 import { DocsContext } from "../context";
 import { IDocs, IDocsSideNav } from "../interfaces";
 import { Signal } from "@preact/signals-react";
-import { SpyInstance } from "vitest"
+import { SpyInstance, vi } from "vitest"
 
 let menu: Signal<boolean> = {value: false} as unknown as Signal<boolean>
+let theme: Signal<boolean> = {value: false} as unknown as Signal<boolean>
 const title: string = "Testing Title"
 const content: IDocs = {}
 const navSide: IDocsSideNav = {}
@@ -46,7 +47,7 @@ describe("DocSideNav", () => {
         
     beforeEach(() => {
         render(
-            <DocsContext.Provider value={{title, content, navTop: "0", navSide}}>
+            <DocsContext.Provider value={{title, content, navTop: "0", navSide, theme}}>
                 <DocsHeaderContext.Provider value={{position: positionHandler.position, menu}}>
                     <header>
                         <nav aria-label="header-nav" style={{transform: `translateX(0)`}} className="nav-doc-container">

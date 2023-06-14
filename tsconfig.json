@@ -28,6 +28,6 @@
     "typeRoots": ["./node_modules/@types"],
     "declaration": true
   },
-  "include": ["src"],
+  "include": ["src", "routes"],
   "references": [{ "path": "tsconfig.node.json" }]
 }

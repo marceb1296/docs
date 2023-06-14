@@ -4,12 +4,15 @@ import { useComputed, useSignal } from "@preact/signals-react";
 import { IDocsMain } from '../interfaces';
 import { DocsContext } from '../context';
 import "../css/docs.scss";
-
+import useTheme from '../core/useTheme';
 
 export const Docs = ({ content, navSide, title }: IDocsMain) => {
 
+    const { prefersBlackTheme } = useTheme();
+
     const pos = useRef<number>(0);
     const position = useSignal("0");
+    
 
     const updateNavSide = useComputed(() => {
         let newNavSide = {}
@@ -60,7 +63,7 @@ export const Docs = ({ content, navSide, title }: IDocsMain) => {
     }
 
     return (
-        <DocsContext.Provider value={{title, content, navTop: position.value, navSide: updateNavSide.value}}>
+        <DocsContext.Provider value={{title, content, navTop: position.value, navSide: updateNavSide.value, theme: prefersBlackTheme}}>
             <div style={{height: "100vh", overflowY: "auto", width: "100%"}} onScroll={scrollHandle}>
                 <DocsHeader />
                 <DocsContainer />

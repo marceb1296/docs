@@ -67,3 +67,40 @@
         border-end-start-radius: 5px;
     }
 }
+
+.dark .alert-container  {
+    &.info {
+        color: black;
+
+        & .alert-header {
+            background-color: #0f4f84;
+        }
+
+        & .alert-body {
+            background-color: #cdd8e1;
+        }
+    }
+
+    &.warn {
+        color: black;
+
+        & .alert-header {
+            background-color: #e2b52d;
+        }
+
+        & .alert-body {
+            background-color: #cdd8e1;
+        }
+    }
+
+    &.danger {
+        color: black;
+        & .alert-header {
+            background-color: #ca3429;
+        }
+
+        & .alert-body {
+            background-color: #cdd8e1;
+        }
+    }
+}

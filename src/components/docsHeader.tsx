@@ -6,6 +6,8 @@ import {
 } from "@preact/signals-react"
 import { DocsSideNav } from "./"
 import { DocsContext, DocsHeaderContext } from "../context";
+import SearchBar from "./docsSearchBar";
+import DocsTheme from "./docsTheme";
 
 export const DocsHeader = () => {
 
@@ -28,13 +30,14 @@ export const DocsHeader = () => {
                     <span>
                         {Docs.title}
                     </span>
-                    <div className="circle">
-                        <span className="exclamation">!</span>
-                    </div>
-                    <div onClick={() => menu.value = !menu.value} className={menu.value ? "menu active" : "menu"}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                    <div className="header-nav">
+                        <SearchBar />
+                        <DocsTheme />
+                        <div onClick={() => menu.value = !menu.value} className={menu.value ? "menu active" : "menu"}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </div>
                 </nav>
             </header>

@@ -4,7 +4,8 @@ import "../mocks/matchMedia.mock"
 import { fireEvent, render, screen } from "../utils"
 import { DocsContext } from "../context"
 import { DocsHeader, DocsContainer } from "./"
-import { SpyInstance } from "vitest"
+import { SpyInstance, vi } from "vitest"
+import { Signal } from "@preact/signals-react"
 
 
 const title: string = "Testing Title"
@@ -16,7 +17,10 @@ const content: IDocs = {
         ]
     }
 }
+
 const navSide: IDocsSideNav = {}
+
+let theme: Signal<boolean> = {value: false} as unknown as Signal<boolean>
 
 // simulate context and useComputed
 
@@ -60,7 +64,7 @@ describe("DocsHeader", () => {
         }
         
         render(
-            <DocsContext.Provider value={{title, content, navTop: positionHandler.position, navSide}}>
+            <DocsContext.Provider value={{title, content, navTop: positionHandler.position, navSide, theme}}>
                 <div data-testid="test-scroll" style={{height: "100vh", overflowY: "auto", width: "100%"}} onScroll={scrollHandle}>
                     <DocsHeader />
                     <DocsContainer />

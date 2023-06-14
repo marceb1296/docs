@@ -77,3 +77,26 @@
 
     }
 }
+
+.dark .docs-section {
+    & .table {
+        color: black;
+
+        & table {
+            
+            & th {
+                background-color: #191c22;
+                color: white;
+            }
+
+            & tr:nth-child(even) td {
+                background-color: #c6c2c2;
+            }
+            
+            & tr:nth-child(odd) td {
+                background-color: #eae8e8;
+            }
+        }
+
+    }
+}

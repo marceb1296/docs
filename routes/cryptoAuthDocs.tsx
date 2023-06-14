@@ -8,9 +8,8 @@ import {
     DocsTableStatus, 
     DocsTableTypes, 
     DocsTableView,
-    IDocs,
-    IDocsSideNav
 } from "../src/lib"
+import { IDocs, IDocsSideNav } from "../src/interfaces";
 
 
 const content: IDocs = {
