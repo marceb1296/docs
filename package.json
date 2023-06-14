@@ -1,7 +1,8 @@
 {
   "name": "docs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "description": "React component to easily create code documentation",
   "peerDependencies": {
     "@preact/signals-react": "1.3.2",
     "react": "18.2.0",
@@ -11,6 +12,17 @@
   "files": [
     "dist"
   ],
+  "author": {
+    "email": "marce1996hr@gmail.com",
+    "name": "Marcelino Huerta"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marceb1296/docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marceb1296/docs.git/issues"
+  },
   "main": "./dist/docs.umd.js",
   "module": "./dist/docs.js",
   "types": "./dist/docs.d.ts",
