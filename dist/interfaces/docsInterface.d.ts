@@ -27,27 +27,4 @@ export interface IDocsMain extends ITitle {
 export interface IDocsAElement extends IDocsSideNavContent {
     menu: Signal<boolean>;
 }
-export interface IDocsContext extends IDocsMain {
-    navTop: string;
-}
-export interface IDocsHeaderContext {
-    position: string;
-    menu: Signal<boolean>;
-}
-type TBody = (string | React.ReactNode);
-export interface IDocsTableBody {
-    text: TBody;
-}
-export interface IDocsTable {
-    header?: string[];
-    body: TBody[][];
-}
-export interface IDocsTableType extends IDocsTable {
-    defaultHeaders: React.ReactNode;
-}
-export interface IDocsAlerts {
-    label: string;
-    classType: string;
-    children: React.ReactNode;
-}
 export {};

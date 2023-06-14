@@ -18,6 +18,14 @@
     ".": {
       "import": "./dist/docs.js",
       "require": "./dist/docs.umd.js"
+    },
+    "./types": {
+      "import": "./dist/interfaces/index.d.ts",
+      "require": "./dist/interfaces/index.d.ts"
+    },
+    "./style": {
+      "import": "./dist/docsStyle.css",
+      "require": "./dist/docsStyle.css"
     }
   }
 }
