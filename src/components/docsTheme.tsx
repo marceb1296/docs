@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import "../css/docsTheme.scss";
-import moon_icon from "/moon_icon.svg";
-import sun_icon from "/sun_icon.svg";
 import { DocsContext } from "../context";
+import { MoonIcon, SunIcon } from "../svg";
 
 const DocsTheme = () => {
 
@@ -14,9 +13,12 @@ const DocsTheme = () => {
         console.log(theme)
     }
     return (
-        <>
-            <img className="theme-icon" onClick={handleClick} width={15} src={theme.value ? sun_icon : moon_icon} alt="theme icon" />
-        </>
+        <div onClick={handleClick} className="theme-icon">
+            { theme.value
+                ? <SunIcon />
+                : <MoonIcon />
+            }
+        </div>
     );
 }
  

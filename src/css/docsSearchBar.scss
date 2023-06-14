@@ -6,7 +6,7 @@
     max-height: 20px;
     width: 100%;
 
-    & .search-icon {
+    & svg {
         position: absolute;
         top: 50%;
         right: 8px;
@@ -78,8 +78,8 @@
 
 .dark .search-bar {
     
-    & .search-icon {
-        filter: invert(1);
+    & svg {
+        color: white;
     }
 
     & input {

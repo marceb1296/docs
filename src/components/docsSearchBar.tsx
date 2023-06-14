@@ -3,7 +3,7 @@ import "../css/docsSearchBar.scss";
 import { IDocsSearchBar } from "../interfaces";
 import { useTextExtractor } from "../core";
 import { DocsHeaderContext } from "../context";
-import search_icon from "/search_icon.svg";
+import { SearchIcon } from "../svg";
 
 const SearchBar = () => {
 
@@ -18,7 +18,7 @@ const SearchBar = () => {
 
     return ( 
         <div className="search-bar">
-            <img className="search-icon" src={search_icon} alt="icon search" />
+            <SearchIcon />
             <input onChange={handleChange} value={result.value} type="text"/>
             
             { result.value && 

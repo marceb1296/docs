@@ -3,8 +3,19 @@
     padding: .4em;
     border-radius: 10px;
     cursor: pointer;
+    
+    & svg {
+        display: grid;
+        width: 18px;
+        height: 18px;
+        color: black;
+    }
 }
 
 .dark .theme-icon {
     background-color: #23272f;
+    
+    & svg {
+        color: white;
+    }
 }
