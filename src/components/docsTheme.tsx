@@ -8,9 +8,7 @@ const DocsTheme = () => {
     const { theme } = useContext(DocsContext);
 
     const handleClick = () => {
-        console.log(theme)
         theme.value = !theme.value
-        console.log(theme)
     }
     return (
         <div onClick={handleClick} className="theme-icon">

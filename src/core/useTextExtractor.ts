@@ -48,7 +48,7 @@ export const useTextExtractor = () => {
                             
                         }
                       
-                        const regex = new RegExp(`(.{10})(${result.value})(.{100})`);
+                        const regex = new RegExp(`(.{0,10})(${result.value})(.{0,100})`);
     
                         const matches = regex.exec(text);
                         if (matches) {
