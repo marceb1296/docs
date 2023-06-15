@@ -4,6 +4,8 @@ A React Component to easily create Code Documentation
 
 ![picture](./docs-picture.png)
 
+Live example: [crypto_auth Documentation](https://docs.mhcode.xyz)
+
 # Install
 
     npm i https://github.com/marceb1296/docs
