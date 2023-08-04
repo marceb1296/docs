@@ -15,8 +15,8 @@ const content: IDocs = {
         id: "introduction",
         title: "Introduction",
         data: [
-            "crypto_auth is a Django app to make token based authentication using a refresh token, both encripted with a hash base, making more hard to access an attacker even if the db were compromised.",
-            "When successfully authenticated, provide two token for every request; main and refresh one, enabling each user to possess a unique token that gets removed from the server-side once the user re-authenticate or logs out. Accompanied by an expiration key and the user ex.",
+            "dango_crypto_auth is a Django app to make token based authentication using a refresh token, both encripted with a hash base, making more hard to access an attacker even if the db were compromised.",
+            "When successfully authenticated, provide two token for request; main and refresh one, enabling each user to possess a unique token that gets removed from the server-side once the user re-authenticate or logs out. Accompanied by an expiration key and the user.",
             <DocsCode>
                 {
 `{
@@ -49,7 +49,6 @@ const content: IDocs = {
 `INSTALLED_APPS = [
     ...
     'crypto_auth',
-    ...
 ]`
                 }
             </DocsCode>,
@@ -61,6 +60,34 @@ const content: IDocs = {
     },
     settings: {
         title: "Settings"
+    },
+    tokenShuffle: {
+        id: "crypto_auth_token_shuffle",
+        title: "CRYPTO_AUTH_TOKEN_SHUFFLE",
+        data: [
+            "django_crypto_auth needs a key to successful encrypt variable can create it easily using 'create_token_shuffle' from helper, ex.",
+            <DocsCode>
+                {
+`# Go to shell
+python manage.py shell
+
+# shell
+> from django_crypto_auth.helper import create_token_shuffle
+> create_token_shuffle()
+> Token shuffle for django_crypto_auth was successfully created!`
+                }
+            </DocsCode>,
+            <DocsAlertInfo>
+                <p>
+                    django_crypto_auth will try to retrieve the CRYPTO_AUTH_TOKEN_SHUFFLE first from <b>helper</b> file, if fails will take it from <b>settings.py</b>
+                </p>
+            </DocsAlertInfo>,
+            <DocsAlertWarning>
+                <p>
+                    The token created from <b>create_token_shuffle</b> is saved at the end of the file <b>helper</b>, its highly recommend to store it into an enviroment variable
+                </p>
+            </DocsAlertWarning>
+        ]
     },
     tokenModel: {
         id: "crypto_auth_token_model",
@@ -94,7 +121,7 @@ class CustomClass(models.Model):
             </DocsCode>,
             <DocsAlertWarning>
                  <p>
-                    Model must have the field <i><b>key</b></i> and the attributes <i><b>get_expiry</b></i> and <i><b>get_refresh_token</b></i>, this is necessary for crypto_auth Serializer, ex.
+                    Model must have the field <i><b>key</b></i> and the attributes <i><b>get_expiry</b></i> and <i><b>get_refresh_token</b></i>, this is necessary for crypto_auth Serializer.
                 </p>
             </DocsAlertWarning>
         ]
@@ -440,6 +467,7 @@ class CustomView(LoginView):
 const navSide: IDocsSideNav = {
     exclude: {
         exclude: [
+            "tokenShuffle",
             "tokenModel",
             "tokenKeywoard",
             "tokenLimit",
@@ -453,6 +481,7 @@ const navSide: IDocsSideNav = {
     },
     settings: {
         childs: [
+            ["crypto_auth_token_shuffle", "CRYPTO_AUTH_TOKEN_SHUFFLE"],
             ["crypto_auth_token_model", "CRYPTO_AUTH_TOKEN_MODEL"],
             ["crypto_auth_token_keywoard", "CRYPTO_AUTH_TOKEN_KEYWOARD"],
             ["crypto_auth_max_token_limit", "CRYPTO_AUTH_MAX_TOKEN_LIMIT"],
@@ -470,7 +499,7 @@ const navSide: IDocsSideNav = {
     }
 }
 
-const title = "Crypto Auth Documentation"
+const title = "Django Crypto Auth Documentation"
 
 const CryptoAuthDocs = () => {
     return (

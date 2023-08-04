@@ -11,7 +11,7 @@ const DocsTheme = () => {
         theme.value = !theme.value
     }
     return (
-        <div onClick={handleClick} className="theme-icon">
+        <div onClick={handleClick} className="theme-icon-docs">
             { theme.value
                 ? <SunIcon />
                 : <MoonIcon />
