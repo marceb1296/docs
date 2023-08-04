@@ -36,8 +36,8 @@
       "require": "./dist/interfaces/index.d.ts"
     },
     "./style": {
-      "import": "./dist/docsStyle.css",
-      "require": "./dist/docsStyle.css"
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
   }
 }
