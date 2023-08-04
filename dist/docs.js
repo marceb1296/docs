@@ -793,7 +793,7 @@ const Fr = () => {
   const { theme: a } = N(I), s = () => {
     a.value = !a.value;
   };
-  return /* @__PURE__ */ r.jsx("div", { onClick: s, className: "theme-icon", children: a.value ? /* @__PURE__ */ r.jsx(kr, {}) : /* @__PURE__ */ r.jsx(Or, {}) });
+  return /* @__PURE__ */ r.jsx("div", { onClick: s, className: "theme-icon-docs", children: a.value ? /* @__PURE__ */ r.jsx(kr, {}) : /* @__PURE__ */ r.jsx(Or, {}) });
 }, Mr = () => {
   const a = N(I), s = M(!1), c = ae(() => s.value ? "0" : "100%");
   return ne(() => {
