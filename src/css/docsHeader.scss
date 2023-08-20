@@ -1,13 +1,16 @@
 .nav-doc-container {
     display: flex;
     width: 100%;
+    max-width: 80ch;
     max-height: 70px;
     align-items: center;
     background-color: #FFE599;
     z-index: 1;
     position: fixed;
     font-weight: bold;
-    transition: top .3s ease-in; 
+    transition: top .3s ease-in;
+    left: 50%;
+    transform: translateX(-50%);
     
     & > span {
         width: 30%;
@@ -23,6 +26,7 @@
         gap: 10px;
         width: 70%;
         
+        
         & .menu {
             width: 20px;
             min-width: 20px;
@@ -31,7 +35,7 @@
             flex-direction: column;
             justify-content: space-between;
             cursor: pointer;
-            padding: 1em;
+            padding: 1em 1em 1em 0.3em;
             
     
             &.active {

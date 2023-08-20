@@ -5,6 +5,7 @@
     justify-content: flex-end;
     max-height: 20px;
     width: 100%;
+    margin-inline-end: 0.3em;
 
     & svg {
         position: absolute;
@@ -49,7 +50,7 @@
         max-height: 50vh;
         overflow-x: hidden;
         color: white;
-        padding: 1em;
+        padding: 1em 1.5em;
         font-size: calc(.85vw + .4vh + .42vmin);
 
 

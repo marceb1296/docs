@@ -1,6 +1,7 @@
 .docs-section {
     min-width: 10em;
     overflow-y: auto;
+    padding-inline: 1em;
 
     & > :not(h2):not(h3) {
         margin-left: 1em;

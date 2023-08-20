@@ -6,7 +6,7 @@ import "../css/docsAlerts.scss";
 export const DocsContent = ({id, title, data}: IDocsContent) => {
 
     return (
-        <div id={id} className="docs-section">
+        <section id={id} className="docs-section">
             { data !== undefined 
                 ? 
                     <>
@@ -27,6 +27,6 @@ export const DocsContent = ({id, title, data}: IDocsContent) => {
 
             }
             
-        </div>
+        </section>
    )
 }

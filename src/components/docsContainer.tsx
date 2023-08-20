@@ -9,10 +9,10 @@ export const DocsContainer = () => {
     const Docs = useContext(DocsContext);
 
     return (
-        <div className="docs-container">
+        <main className="docs-container">
             {   Docs.content !== undefined &&
                 Object.values(Docs.content).map(({id, title, data}, index: number)  => <DocsContent key={index} id={id} title={title} data={data} />)
             }
-        </div>
+        </main>
    )
 }

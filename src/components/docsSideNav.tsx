@@ -10,29 +10,29 @@ export const DocsSideNav = () => {
 
     const Docs = useContext(DocsContext);
     const DocsHeader = useContext(DocsHeaderContext);
-    
+
 
     return (
-        <nav aria-label="side-nav" style={{transform: `translateX(${DocsHeader.position})`}} className="side-nav-doc-container">
+        <aside aria-label="side-nav" style={{ transform: `translateX(${DocsHeader.position})` }} className="side-nav-doc-container">
             <div className="side-nav-elements">
                 {
-                    Object.values(Docs.navSide).map(({title, to, childs}, index) => to !== undefined
+                    Object.values(Docs.navSide).map(({ title, to, childs }, index) => to !== undefined
                         ? <NavAElement key={index} to={to} menu={DocsHeader.menu} title={title} />
                         : <NavAElementWithChilds key={index} menu={DocsHeader.menu} title={title} childs={childs} />
                     )
-                }   
+                }
             </div>
-        </nav>
+        </aside>
     )
 }
 
-const NavAElement = ({title, menu, to}: IDocsAElement) => {
+const NavAElement = ({ title, menu, to }: IDocsAElement) => {
     return (
         <a href={"#" + to} onClick={() => menu.value = !menu.value}>{title}</a>
     )
 }
 
-const NavAElementWithChilds = ({title, childs, menu}: IDocsAElement) => {
+const NavAElementWithChilds = ({ title, childs, menu }: IDocsAElement) => {
 
     const collapseValues = useSignal({
         initial: 0,
@@ -51,7 +51,7 @@ const NavAElementWithChilds = ({title, childs, menu}: IDocsAElement) => {
                 clearInterval(interval);
             }
         }, 200)
-        
+
         return () => clearInterval(interval);
     }, [])
 
@@ -71,8 +71,8 @@ const NavAElementWithChilds = ({title, childs, menu}: IDocsAElement) => {
         hanldeList.current.style.height = collapseValues.value.dinamic.toString() + "px"
         hanldeList.current.classList.toggle("active")
     }
-    
-   
+
+
     return (
         <div className="collapse-container">
             <div onClick={handleClick} className="collapse-target">
@@ -84,14 +84,14 @@ const NavAElementWithChilds = ({title, childs, menu}: IDocsAElement) => {
             </div>
             <div>
                 <ul ref={hanldeList}>
-                    { childs !== undefined && 
+                    {childs !== undefined &&
                         childs.map(([_to, _title], index) => <li key={index}><a href={"#" + _to} onClick={() => menu.value = !menu.value}>{_title}</a></li>)
                     }
                 </ul>
             </div>
         </div>
     )
-    
+
 
 }
 

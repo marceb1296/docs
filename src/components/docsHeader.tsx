@@ -14,19 +14,19 @@ export const DocsHeader = () => {
     const Docs = useContext(DocsContext);
 
     const menu = useSignal(false)
-    const navsidePosition = useComputed(() => menu.value ? "0" : "100%")
+    const navsidePosition = useComputed(() => menu.value ? "0" : "-100vw")
 
-    // detect if device is mobile, if is it, menu will not be displayed
-    useEffect(() => {
-        const device = window.matchMedia("(min-width: 48em)")
-        menu.value = device.matches
-    }, [])
-    
+    // // detect if device is mobile, if is it, menu will not be displayed
+    // useEffect(() => {
+    //     const device = window.matchMedia("(min-width: 48em)")
+    //     menu.value = device.matches
+    // }, [])
+
 
     return (
-        <DocsHeaderContext.Provider value={{position: navsidePosition.value, menu}}>
+        <DocsHeaderContext.Provider value={{ position: navsidePosition.value, menu }}>
             <header>
-                <nav aria-label="header-nav" style={{top: Docs.navTop}} className="nav-doc-container">
+                <nav aria-label="header-nav" style={{ top: Docs.navTop }} className="nav-doc-container">
                     <span>
                         {Docs.title}
                     </span>

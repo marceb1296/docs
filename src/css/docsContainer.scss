@@ -1,9 +1,9 @@
 .docs-container {
-    margin-top: 3.2em;
     display: flex;
     flex-direction: column;
     gap: 1em;
-    margin-inline: 1em;
+    max-width: 80ch;
+    margin: 3.5em auto 1em auto;
 
     & .doc-section {
 
