@@ -12,26 +12,26 @@ const SearchBar = () => {
         queryValue,
         handleChange
     } = useTextExtractor();
-    
+
 
     const defferedResult = useDeferredValue(queryValue)
 
-    return ( 
+    return (
         <div className="search-bar">
             <SearchIcon />
-            <input onChange={handleChange} value={result.value} type="text"/>
-            
-            { result.value && 
+            <input onChange={handleChange} value={result.value} type="text" />
+
+            {result.value &&
                 <div className="search-result">
                     <Suspense fallback={<h2>Loading...</h2>} >
-                        <SearchResult query={defferedResult} result={result}/>
+                        <SearchResult query={defferedResult} result={result} />
                     </Suspense>
                 </div>
             }
         </div>
     );
 }
- 
+
 export default SearchBar;
 
 
@@ -44,22 +44,22 @@ const SearchResult = ({ query, result }: IDocsSearchBar) => {
         if (menu.value) menu.value = !menu.value;
     }
 
-    return(
+    return (
         <>
-            { query.length > 0
+            {query.length > 0
                 ?
-                    query.map(
-                        ({title, to, firstMatch, mainMatch, secondMatch}, index: number) => <div key={index}>
-                            <h3>{title}</h3>
-                            <a href={"#" + to} onClick={handleClick}>
-                                ...{firstMatch}
-                                <span className="search-keywoard">{mainMatch}</span>
-                                {secondMatch}
-                            </a>
-                        </div>
-                    )
+                query.map(
+                    ({ title, to, firstMatch, mainMatch, secondMatch }, index: number) => <div key={index}>
+                        <h3>{title}</h3>
+                        <a href={"#" + to} onClick={handleClick}>
+                            ...{firstMatch}
+                            <span className="search-keyword">{mainMatch}</span>
+                            {secondMatch}
+                        </a>
+                    </div>
+                )
                 :
-                    <h5>Sorry, we cant find any match...</h5>
+                <h5>Sorry, we cant find any match...</h5>
             }
         </>
     )

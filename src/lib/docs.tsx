@@ -74,8 +74,7 @@ export const Docs = ({ content, navSide, title }: IDocsMain) => {
 				style={{
 					height: "100vh",
 					overflowY: "auto",
-					margin: "0 auto",
-					maxWidth: "80ch"
+					margin: "0 auto"
 				}}
 				onScroll={scrollHandle}
 			>

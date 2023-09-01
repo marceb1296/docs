@@ -14,13 +14,13 @@ export const DocsHeader = () => {
     const Docs = useContext(DocsContext);
 
     const menu = useSignal(false)
-    const navsidePosition = useComputed(() => menu.value ? "0" : "-100vw")
+    const navsidePosition = useComputed(() => menu.value ? "0" : "100%")
 
     // // detect if device is mobile, if is it, menu will not be displayed
-    // useEffect(() => {
-    //     const device = window.matchMedia("(min-width: 48em)")
-    //     menu.value = device.matches
-    // }, [])
+    useEffect(() => {
+        const device = window.matchMedia("(min-width: 83em)")
+        menu.value = device.matches
+    }, [])
 
 
     return (
