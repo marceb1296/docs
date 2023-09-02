@@ -4,7 +4,7 @@ A React Component to easily create Code Documentation
 
 ![picture](./docs-picture.png)
 
-Live example: [django_crypto_auth Documentation](https://docs.mhcode.xyz/crypto_auth)
+Live example: [django_crypto_auth Documentation](https://docs.mhcode.dev/crypto_auth)
 
 # Install
 
