@@ -50,6 +50,8 @@ export const DocsContainer = () => {
 		return result.filter(el => !content.childsKeys.includes(el.key));
 	});
 
+	console.log(updateDocsContent.value);
+
 	return (
 		<main className="docs-container">
 			{updateDocsContent.value.map(

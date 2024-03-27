@@ -24,26 +24,25 @@ export const DocsContent = ({
 			{data !== undefined ? (
 				<>
 					{subTitle ? <h3>{title}</h3> : <h2>{title}</h2>}
-					{data.length !== 0 &&
+					{data.length > 0 &&
 						data.map((el, index) =>
 							typeof el === "string" ? (
 								<p key={index}>{el}</p>
 							) : (
-								<Fragment key={index}>
-									{el}{" "}
-									{dataChilds.length > 0 &&
-										dataChilds.map((el, index: number) => (
-											<DocsContent
-												key={`${el.title}-${index}`}
-												{...el}
-												dataChilds={[]}
-												childClass={childClassStr}
-												subTitle={true}
-											/>
-										))}
-								</Fragment>
+								<Fragment key={index}>{el}</Fragment>
 							)
 						)}
+
+					{dataChilds.length > 0 &&
+						dataChilds.map((el, index: number) => (
+							<DocsContent
+								key={`${el.title}-${index}`}
+								{...el}
+								dataChilds={[]}
+								childClass={childClassStr}
+								subTitle={true}
+							/>
+						))}
 				</>
 			) : (
 				<>
