@@ -10,6 +10,7 @@ export interface IDocsContent {
     id?: string;
     data?: (string | React.ReactNode)[];
     title: string;
+    childs?: string[];
 }
 interface IDocsSideNavContent {
     exclude?: string[];

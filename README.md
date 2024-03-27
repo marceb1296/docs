@@ -10,7 +10,7 @@ Live example: [django_crypto_auth Documentation](https://docs.mhcode.dev/crypto_
 
     npm i https://github.com/marceb1296/docs
 
-# Quick Start 
+# Quick Start
 
     import { Docs } from "docs";
     import "docs/styles"
@@ -48,8 +48,7 @@ Live example: [django_crypto_auth Documentation](https://docs.mhcode.dev/crypto_
         )
     }
 
-
-# TypeScript 
+# TypeScript
 
     import { Docs } from "docs";
     import { IDocs, IDocsSideNav } from "docs/types";
@@ -57,7 +56,7 @@ Live example: [django_crypto_auth Documentation](https://docs.mhcode.dev/crypto_
 
 
     const title: string = ...
-        
+
     const content: IDocs= {
         intro: {
             title: "Intro"
@@ -87,11 +86,10 @@ Live example: [django_crypto_auth Documentation](https://docs.mhcode.dev/crypto_
             <Docs title={title} content={content} sideNav={sideNav} />
         )
 
-
 ### Docs types.
 
-- content *
-    
+-   content \*
+
     ```
     IDocs {
         [key: string]: IDocsContent;
@@ -101,9 +99,11 @@ Live example: [django_crypto_auth Documentation](https://docs.mhcode.dev/crypto_
         id?: string;
         data?: (string | React.ReactNode)[];
         title: string;
+        childs: string[]
     }
     ```
-- navside *
+
+-   navside \*
 
     ```
     IDocsSideNav {
@@ -116,11 +116,9 @@ Live example: [django_crypto_auth Documentation](https://docs.mhcode.dev/crypto_
     }
     ```
 
-- title: string *
+-   title: string \*
 
-
-
-# Helpers 
+# Helpers
 
 ## Code
 
@@ -134,7 +132,7 @@ Live example: [django_crypto_auth Documentation](https://docs.mhcode.dev/crypto_
 
 ### Code types
 
-- children: React.ReactNode *
+-   children: React.ReactNode \*
 
 ## Alerts
 
@@ -147,7 +145,7 @@ Live example: [django_crypto_auth Documentation](https://docs.mhcode.dev/crypto_
     <DocsAlertWarning>
         {
             <p>Some Text</p>
-        }    
+        }
     </DocsAlertWarning>
 
     <DocsAlertDanger>
@@ -158,13 +156,11 @@ Live example: [django_crypto_auth Documentation](https://docs.mhcode.dev/crypto_
 
 ### Alert types
 
-- children: React.ReactNode *
-
+-   children: React.ReactNode \*
 
 ## Tables
 
-    
-    /** Default headers 
+    /** Default headers
     * Name
     * Type
     * Required
@@ -180,10 +176,10 @@ Live example: [django_crypto_auth Documentation](https://docs.mhcode.dev/crypto_
             "some Default "
         ]
     ]} />
-    
+
     /** Default headers
     * Code
-    * Response 
+    * Response
     **/
     <DocsTableStatus body={[
         [
@@ -191,8 +187,8 @@ Live example: [django_crypto_auth Documentation](https://docs.mhcode.dev/crypto_
             "Success"
         ]
     ]} />
-    
-    /** Default headers 
+
+    /** Default headers
     * Endpoint
     * Method
     * Headers
@@ -218,11 +214,6 @@ Live example: [django_crypto_auth Documentation](https://docs.mhcode.dev/crypto_
     IDocsTable {
         header?: string[]
         body: TBody[][]
-    }    
+    }
 
     TBody = (string | React.ReactNode)
-
-
-
-
-

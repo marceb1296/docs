@@ -7,4 +7,5 @@ export interface IDocsContext extends IDocsMain {
 export interface IDocsHeaderContext {
     position: string;
     menu: Signal<boolean>;
+    translate: Signal<boolean>;
 }
