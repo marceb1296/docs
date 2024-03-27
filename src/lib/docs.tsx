@@ -16,7 +16,7 @@ export const Docs = ({ content, navSide, title }: IDocsMain) => {
 		let newNavSide = {};
 		let exclude: string[] = navSide["exclude"]?.exclude ?? [];
 
-		Object.keys(content).forEach((key) => {
+		Object.keys(content).forEach(key => {
 			if (exclude.includes(key)) return;
 
 			let { title, id: to } = content[key];
@@ -66,18 +66,16 @@ export const Docs = ({ content, navSide, title }: IDocsMain) => {
 				content,
 				navTop: position.value,
 				navSide: updateNavSide.value,
-				theme: prefersBlackTheme
-			}}
-		>
+				theme: prefersBlackTheme,
+			}}>
 			<div
 				className="docs-main"
 				style={{
 					height: "100vh",
 					overflowY: "auto",
-					margin: "0 auto"
+					margin: "0 auto",
 				}}
-				onScroll={scrollHandle}
-			>
+				onScroll={scrollHandle}>
 				<DocsHeader />
 				<DocsContainer />
 				<p></p>

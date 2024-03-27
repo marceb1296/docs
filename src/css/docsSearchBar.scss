@@ -1,89 +1,98 @@
 .search-bar {
-    position: relative;
-    display: inline-block;
-    display: flex;
-    justify-content: flex-end;
-    max-height: 20px;
-    width: 100%;
-    margin-inline-end: 0.3em;
+	position: relative;
+	display: inline-block;
+	display: flex;
+	justify-content: flex-end;
+	max-height: 20px;
+	width: 100%;
+	margin-inline-end: 0.3em;
 
-    & svg {
-        position: absolute;
-        top: 50%;
-        right: 8px;
-        height: 70%;
-        transform: translateY(-50%);
-    }
+	& svg {
+		position: absolute;
+		top: 50%;
+		right: 8px;
+		height: 70%;
+		transform: translateY(-50%);
+	}
 
-    & input {
-        border-radius: 10px;
-        width: 0%;
-        border: none;
-        z-index: 3;
-        border: 2px solid rgb(164, 138, 138);
-        background: transparent;
-        padding-inline: 1em;
-        padding-block: .5em;
-        text-align: center;
-        transition: width .5s ease;
-        max-width: 50%;
+	& input {
+		border-radius: 10px;
+		width: 0%;
+		border: none;
+		z-index: 3;
+		border: 2px solid rgb(164, 138, 138);
+		background: transparent;
+		padding-inline: 1em;
+		padding-block: 0.5em;
+		text-align: center;
+		transition: width 0.5s ease;
+		max-width: 50%;
 
-        &:hover, &:focus {
-            width: 100%;
-            outline: none;
-        }
+		&:hover,
+		&:focus {
+			width: 100%;
+			outline: none;
+		}
 
-        &::selection {
-            border: none;
-        }
+		&::selection {
+			border: none;
+		}
+	}
 
-    }
+	& .search-result {
+		margin-top: 25px;
+		position: absolute;
+		border-radius: 10px;
+		background-color: rgba(0, 38, 38);
+		width: 100%;
+		height: auto;
+		max-height: 50vh;
+		overflow-x: hidden;
+		color: white;
+		padding: 1em 1.5em;
+		font-size: calc(0.85vw + 0.4vh + 0.42vmin);
+		scrollbar-gutter: stable both-edges;
 
-    & .search-result {
-        
-        margin-top: 25px;
-        position: absolute;
-        border-radius: 10px;
-        background-color: rgba(0, 38, 38);
-        width: 100%;
-        height: auto;
-        max-height: 50vh;
-        overflow-x: hidden;
-        color: white;
-        padding: 1em 1.5em;
-        font-size: calc(.85vw + .4vh + .42vmin);
+		&::-webkit-scrollbar {
+			background-color: #addcdf;
+			transition: background-color 0.1s ease;
+			width: 10px;
+		}
 
+		&::-webkit-scrollbar-thumb {
+			background-color: #475159;
+			box-shadow: inset -3px -1px 5px gray;
+		}
 
-        & a {
-            text-decoration: none;
-            color: white;
-            display: block;
-            max-width: 100%;
-            margin-inline: 1em;
-            white-space: nowrap;
-            overflow: hidden;
-            padding: .5em;
-            text-overflow: ellipsis;
-            border-radius: 10px;
+		& a {
+			text-decoration: none;
+			color: white;
+			display: block;
+			max-width: 100%;
+			margin-inline: 1em;
+			white-space: nowrap;
+			overflow: hidden;
+			padding: 0.5em;
+			text-overflow: ellipsis;
+			border-radius: 10px;
 
-            &:hover {
-                background-color: rgb(70, 69, 69);
-            }
+			&:hover {
+				background-color: rgb(70, 69, 69);
+			}
 
-            & .search-keyword {
-                background-color: rgba(255, 255, 0, 0.264);
-            }
-        }
-    }
+			& .search-keyword {
+				background-color: rgba(255, 255, 0, 0.264);
+			}
+		}
+	}
 }
 
 .dark .search-bar {
-    
-    & svg {
-        color: white;
-    }
+	& svg {
+		color: white;
+	}
 
-    & input {
-        color: white;
-    }
+	& input {
+		color: white;
+	}
 }

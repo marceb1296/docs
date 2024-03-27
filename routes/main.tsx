@@ -12,7 +12,7 @@ const root = createRoot(document.getElementById("app") as HTMLElement);
  */
 
 root.render(
-    <React.StrictMode>
-        <CryptoAuthDocs />
-    </React.StrictMode>
-)
+	<React.StrictMode>
+		<CryptoAuthDocs />
+	</React.StrictMode>
+);

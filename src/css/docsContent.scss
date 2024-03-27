@@ -1,102 +1,125 @@
 .docs-section {
-    min-width: 10em;
-    overflow-y: auto;
-    padding-inline: 1em;
+	min-width: 10em;
+	overflow-y: auto;
+	text-wrap: pretty;
 
-    & > :not(h2):not(h3) {
-        margin-left: 1em;
-    }
+	& > *:not(h2):not(h3) {
+		margin-left: 1em;
+	}
 
-    & pre {
-        padding: 1em;
-        color: white;
-        background-color: #18120e;
-        border-radius: 5px;
-        overflow-y: auto;
-    }
+	& pre {
+		padding-block: 1em;
+		padding-inline: 1.5em;
+		color: white;
+		background-color: #18120e;
+		border-radius: 5px;
+		overflow-y: auto;
+		margin-left: 1rem !important;
+	}
 
-    & strong {
-        font-size: 1.3em;
-    }
+	& pre,
+	& .table {
+		&::-webkit-scrollbar {
+			background-color: #addcdf;
+			transition: background-color 0.1s ease;
+			height: 10px;
+		}
 
-    & .table {
-        font-size: .95em;
-        overflow-y: auto;
-        
-        & table {
-            
-            border-collapse: separate;
-            border-spacing: 0;
+		&::-webkit-scrollbar-thumb {
+			background-color: #475159;
+			box-shadow: inset -3px -1px 5px gray;
+		}
+	}
 
-            & th {
-                background-color: #333333;
-                color: white;
-            }
+	& strong {
+		font-size: 1.3em;
+	}
 
-            & td, th {
-                padding: 1em;
-                border: 1px black;
-                border-style: none solid solid none;
-                text-align: center;
+	& .table {
+		font-size: 0.95em;
+		overflow-y: auto;
 
-                & ul {
-                    padding: 0;
-                    list-style: none;
-                }
-            }
-    
-            & tr:nth-child(even) td {
-                background-color: #f6f6f6;
-            }
-            
-            & tr:nth-child(odd) td {
-                background-color: #ffffff;
-            }
-    
-            & tr:first-child th:first-child { 
-                border-top-left-radius: 5px; 
-            }
-            & tr:first-child th:last-child { 
-                border-top-right-radius: 5px; 
-            }
-    
-            & tr:last-child td:first-child { 
-                border-bottom-left-radius: 5px; 
-            }
-            & tr:last-child td:last-child { 
-                border-bottom-right-radius: 5px; 
-            }
-    
-            & tr:first-child th { 
-                border-top-style: solid; 
-            }
-            & tr td:first-child, & tr th:first-child { 
-                border-left-style: solid; 
-            }
-        }
+		& table {
+			border-collapse: separate;
+			border-spacing: 0;
+			text-wrap: balance;
 
-    }
+			& th {
+				background-color: #333333;
+				color: white;
+			}
+
+			& td,
+			th {
+				padding: 1em;
+				border: 1px black;
+				border-style: none solid solid none;
+				text-align: center;
+
+				& ul {
+					padding: 0;
+					list-style: none;
+				}
+
+				& p {
+					min-width: 25ch;
+				}
+			}
+
+			& td {
+				min-width: fit-content;
+			}
+
+			& tr:nth-child(even) td {
+				background-color: #f6f6f6;
+			}
+
+			& tr:nth-child(odd) td {
+				background-color: #ffffff;
+			}
+
+			& tr:first-child th:first-child {
+				border-top-left-radius: 5px;
+			}
+			& tr:first-child th:last-child {
+				border-top-right-radius: 5px;
+			}
+
+			// & tr:last-child td:first-child {
+			// 	border-bottom-left-radius: 5px;
+			// }
+			// & tr:last-child td:last-child {
+			// 	border-bottom-right-radius: 5px;
+			// }
+
+			& tr:first-child th {
+				border-top-style: solid;
+			}
+			& tr td:first-child,
+			& tr th:first-child {
+				border-left-style: solid;
+			}
+		}
+	}
 }
 
 .dark .docs-section {
-    & .table {
-        color: black;
+	& .table {
+		color: black;
 
-        & table {
-            
-            & th {
-                background-color: #191c22;
-                color: white;
-            }
+		& table {
+			& th {
+				background-color: #191c22;
+				color: white;
+			}
 
-            & tr:nth-child(even) td {
-                background-color: #c6c2c2;
-            }
-            
-            & tr:nth-child(odd) td {
-                background-color: #eae8e8;
-            }
-        }
+			& tr:nth-child(even) td {
+				background-color: #c6c2c2;
+			}
 
-    }
+			& tr:nth-child(odd) td {
+				background-color: #eae8e8;
+			}
+		}
+	}
 }
