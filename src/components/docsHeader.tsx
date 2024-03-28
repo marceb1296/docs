@@ -29,7 +29,12 @@ export const DocsHeader = () => {
 					aria-label="header-nav"
 					style={{ top: Docs.navTop }}
 					className="nav-doc-container">
-					<span>{Docs.title}</span>
+					<span
+						style={{
+							fontSize: "clamp(.8rem, 2vw, 1rem)",
+						}}>
+						{Docs.title}
+					</span>
 					<div className="header-nav">
 						<SearchBar />
 						<DocsTheme />
