@@ -813,7 +813,7 @@ const Ar = () => {
       })
     ).filter((l) => !o.childsKeys.includes(l.key));
   });
-  return /* @__PURE__ */ r.jsx("main", { className: "docs-container", children: s.value.map(
+  return console.log(s.value), /* @__PURE__ */ r.jsx("main", { className: "docs-container", children: s.value.map(
     ({ id: o, title: d, data: l, dataChilds: c }, u) => /* @__PURE__ */ r.jsx(
       ae,
       {
@@ -1022,7 +1022,15 @@ const zr = () => {
             style: { top: a.navTop },
             className: "nav-doc-container",
             children: [
-              /* @__PURE__ */ r.jsx("span", { children: a.title }),
+              /* @__PURE__ */ r.jsx(
+                "span",
+                {
+                  style: {
+                    fontSize: "clamp(.8rem, 2vw, 1rem)"
+                  },
+                  children: a.title
+                }
+              ),
               /* @__PURE__ */ r.jsxs("div", { className: "header-nav", children: [
                 /* @__PURE__ */ r.jsx(Ir, {}),
                 /* @__PURE__ */ r.jsx(zr, {}),
