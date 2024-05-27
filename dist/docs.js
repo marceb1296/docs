@@ -1063,7 +1063,8 @@ const Yr = () => {
       "aria-label": "side-nav",
       style: {
         transform: `translateX(${s.position})`,
-        right: s.translate.value ? "calc(50% - 98ch)" : "0"
+	// TODO: Fix the aside position to match the content in larger viewports.
+        // right: s.translate.value ? "calc(50% - 98ch)" : "0"
       },
       className: "side-nav-doc-container",
       children: /* @__PURE__ */ r.jsx("div", { className: "side-nav-elements", children: Object.values(a.navSide).map(
